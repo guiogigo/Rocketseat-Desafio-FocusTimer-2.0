@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color: 240;
+  --bg-color: white;
+  --txt-color: hsla(var(--color), 6%, 21%, 1);
+
+  font-size: 62.5%;
+}
+
+.hide {
+  display: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+
+  min-width: 33rem;
+  padding: 2rem;
+}
+
+.countdownWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonWrapper {
+  margin-top: 1rem;
+  justify-content: center;
+  display: flex;
+  gap: 4rem;
+}
+
+.buttonWrapper :nth-child(1):hover {
+  cursor: pointer;
+}
+
+span {
+  font-weight: 500;
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+  color: var(--txt-color);
+}
+
+#teste {
+  display: flex;
+  align-items: center;
+}
+
+.soundWrapper {
+  display: grid;
+  grid-template-areas: 
+  "A B"
+  "C D";
+  gap: 3.2rem
+}
+
+.card {
+  padding: 4.8rem;
+  background: #E1E1E6;
+  border-radius: 2.4rem;
+  transition: background 0.5s ease;
+}
+
+.card svg path, .btn svg path {
+  fill: #323238;
+  transition: fill 0.25s ease;
+}
+
+.card:hover, .card:hover svg path {
+  background: #02799D;
+  fill: white;
+  cursor: pointer;
+}
+
+.btn:hover svg path {
+  fill: #02799D;
+}
+
+
+#forest {
+  grid-area: A;
+}
+#rain {
+  grid-area: B;
+}
+#coffeShop {
+  grid-area: C;
+}
+#campFire {
+  grid-area: D;
+}
+
+.selected svg path {
+  fill: white;
+}
+
+.selected {
+  background: #02799D;
+}
+
+@media (min-width: 920px) {
+  main {
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 20rem;
+  
+    padding: 2rem;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .buttonWrapper {
+    margin-top: 4.8rem;
+  }
+}
+
+@media (max-width: 345px) {
+  span {
+    font-size: 10.6rem;
+  }
+
+  .buttonWrapper {
+    gap: 2.5rem
+  }
+
+  .card {
+    padding: 3.2rem;
+  }
+}

@@ -1,0 +1,104 @@
+import { selector } from "./querySelect.js"
+import { sound } from "./sounds.js"
+
+const forest = sound.lofiAudioForest
+const rain = sound.lofiAudioRain
+const coffe = sound.lofiAudioCoffe
+const fire = sound.lofiAudioCampFire
+
+
+export const controls = {
+  play() {
+    selector.buttonPlay.classList.add('hide')
+    selector.buttonPause.classList.remove('hide')
+  },
+
+  pause() {
+    selector.buttonPlay.classList.remove('hide')
+    selector.buttonPause.classList.add('hide')
+  },
+
+  forest() {
+    sound.buttonPressAudio.play()
+
+    sound.lofiAudioForest.play()
+    sound.lofiAudioForest.loop = true
+    
+    let selected = selector.buttonSoundForest.classList.contains('selected')
+    if(selected) {
+      sound.lofiAudioForest.pause()
+    } else {
+      rain.pause()
+      selector.buttonSoundRain.classList.remove('selected')
+      coffe.pause()
+      selector.buttonSoundCoffe.classList.remove('selected')
+      fire.pause()
+      selector.buttonSoundCampFire.classList.remove('selected')
+    }
+    
+    selector.buttonSoundForest.classList.toggle('selected')
+  },
+
+  rain() {
+    sound.buttonPressAudio.play()
+
+    sound.lofiAudioRain.play()
+    sound.lofiAudioRain.loop = true
+
+    let selected = selector.buttonSoundRain.classList.contains('selected')
+    if(selected) {
+      sound.lofiAudioRain.pause()
+    } else {
+      forest.pause()
+      selector.buttonSoundForest.classList.remove('selected')
+      coffe.pause()
+      selector.buttonSoundCoffe.classList.remove('selected')
+      fire.pause()
+      selector.buttonSoundCampFire.classList.remove('selected')
+    }
+
+    selector.buttonSoundRain.classList.toggle('selected')
+  },
+
+  coffeShop() {
+    sound.buttonPressAudio.play()
+
+    sound.lofiAudioCoffe.play()
+    sound.lofiAudioCoffe.loop = true
+
+    let selected = selector.buttonSoundCoffe.classList.contains('selected')
+    if(selected) {
+      sound.lofiAudioCoffe.pause()
+    } else {
+      forest.pause()
+      selector.buttonSoundForest.classList.remove('selected')
+      rain.pause()
+      selector.buttonSoundRain.classList.remove('selected')
+      fire.pause()
+      selector.buttonSoundCampFire.classList.remove('selected')
+    }
+
+    selector.buttonSoundCoffe.classList.toggle('selected')
+  },
+
+  campFire() {
+    sound.buttonPressAudio.play()
+    
+    sound.lofiAudioCampFire.play()
+    sound.lofiAudioCampFire.loop = true
+
+    let selected = selector.buttonSoundCampFire.classList.contains('selected')
+    if(selected) {
+      sound.lofiAudioCampFire.pause()
+    } else {
+      forest.pause()
+      selector.buttonSoundForest.classList.remove('selected')
+      rain.pause()
+      selector.buttonSoundRain.classList.remove('selected')
+      coffe.pause()
+      selector.buttonSoundCoffe.classList.remove('selected')
+    }
+
+    selector.buttonSoundCampFire.classList.toggle('selected')
+  },
+}
