@@ -27,14 +27,7 @@ export const controls = {
     let selected = selector.buttonSoundForest.classList.contains('selected')
     if(selected) {
       sound.lofiAudioForest.pause()
-    } else {
-      rain.pause()
-      selector.buttonSoundRain.classList.remove('selected')
-      coffe.pause()
-      selector.buttonSoundCoffe.classList.remove('selected')
-      fire.pause()
-      selector.buttonSoundCampFire.classList.remove('selected')
-    }
+    } 
     
     selector.buttonSoundForest.classList.toggle('selected')
   },
@@ -48,14 +41,7 @@ export const controls = {
     let selected = selector.buttonSoundRain.classList.contains('selected')
     if(selected) {
       sound.lofiAudioRain.pause()
-    } else {
-      forest.pause()
-      selector.buttonSoundForest.classList.remove('selected')
-      coffe.pause()
-      selector.buttonSoundCoffe.classList.remove('selected')
-      fire.pause()
-      selector.buttonSoundCampFire.classList.remove('selected')
-    }
+    } 
 
     selector.buttonSoundRain.classList.toggle('selected')
   },
@@ -69,14 +55,7 @@ export const controls = {
     let selected = selector.buttonSoundCoffe.classList.contains('selected')
     if(selected) {
       sound.lofiAudioCoffe.pause()
-    } else {
-      forest.pause()
-      selector.buttonSoundForest.classList.remove('selected')
-      rain.pause()
-      selector.buttonSoundRain.classList.remove('selected')
-      fire.pause()
-      selector.buttonSoundCampFire.classList.remove('selected')
-    }
+    } 
 
     selector.buttonSoundCoffe.classList.toggle('selected')
   },
@@ -90,14 +69,7 @@ export const controls = {
     let selected = selector.buttonSoundCampFire.classList.contains('selected')
     if(selected) {
       sound.lofiAudioCampFire.pause()
-    } else {
-      forest.pause()
-      selector.buttonSoundForest.classList.remove('selected')
-      rain.pause()
-      selector.buttonSoundRain.classList.remove('selected')
-      coffe.pause()
-      selector.buttonSoundCoffe.classList.remove('selected')
-    }
+    } 
 
     selector.buttonSoundCampFire.classList.toggle('selected')
   },

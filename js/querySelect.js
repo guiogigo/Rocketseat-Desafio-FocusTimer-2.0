@@ -15,5 +15,10 @@ export const selector = {
 
   buttonLightMode: document.querySelector('#light-mode'),
   buttonDarkMode: document.querySelector('#dark-mode'),
-  body: document.querySelector('body')
+  body: document.querySelector('body'),
+
+  forestSlider: document.querySelector('#forestSlider'),
+  rainSlider: document.querySelector('#rainSlider'),
+  coffeSlider: document.querySelector('#coffeSlider'),
+  fireSlider: document.querySelector('#fireSlider'),
 }

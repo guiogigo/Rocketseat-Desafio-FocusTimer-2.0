@@ -48,6 +48,30 @@ export const main = {
   darkMode() {
     controls.lightMode()
   },
+  forestVolume() {
+    let inputValeuSound = selector.forestSlider.value
+    sound.lofiAudioForest.volume = inputValeuSound
+
+    controls.forest()
+  },
+  rainVolume() {
+    let inputValeuSound = selector.rainSlider.value
+    sound.lofiAudioRain.volume = inputValeuSound
+
+    controls.rain()
+  },
+  coffeVolume() {
+    let inputValeuSound = selector.coffeSlider.value
+    sound.lofiAudioCoffe.volume = inputValeuSound
+
+    controls.coffeShop()
+  },
+  fireVolume() {
+    let inputValeuSound = selector.fireSlider.value
+    sound.lofiAudioCampFire.volume = inputValeuSound
+
+    controls.campFire()
+  },
 }
 
 selector.buttonPlay.addEventListener('click', main.buttonPlay)
@@ -64,6 +88,9 @@ selector.buttonSoundRain.addEventListener('click', main.buttonRain)
 selector.buttonSoundCoffe.addEventListener('click', main.buttonCoffe)
 selector.buttonSoundCampFire.addEventListener('click', main.buttonCampFire)
 
-
+selector.forestSlider.addEventListener('input', main.forestVolume)
+selector.rainSlider.addEventListener('input', main.rainVolume)
+selector.coffeSlider.addEventListener('input', main.coffeVolume)
+selector.fireSlider.addEventListener('input', main.fireVolume)
 
 

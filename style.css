@@ -94,6 +94,13 @@ span {
   background: var(--card-color);
   border-radius: 2.4rem;
   transition: background 0.5s ease;
+
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 3.2rem;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .card svg path, .btn svg path {
@@ -106,6 +113,39 @@ span {
   fill: var(--card-fill-hover);
   cursor: pointer;
 }
+
+.volume {
+  appearance: none;
+  width: 9rem;
+  height: .4rem;
+  background: var(--card-fill);
+  border-radius: 5px;
+
+  transition: all 0.25s;
+}
+
+.volume::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 1.6rem;
+  height: 1.6rem;
+
+  border-radius: 9999rem;
+  background: var(--card-fill);
+
+  transition: all 0.25s;
+}
+
+.selected .volume,
+.card:hover .volume {
+  background: white;
+} 
+
+.selected .volume::-webkit-slider-thumb,
+.card:hover .volume::-webkit-slider-thumb {
+  background: white;
+  cursor: pointer;
+} 
 
 .btn:hover svg path {
   fill: var(--card-hover);
