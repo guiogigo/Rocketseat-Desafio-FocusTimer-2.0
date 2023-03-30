@@ -101,4 +101,18 @@ export const controls = {
 
     selector.buttonSoundCampFire.classList.toggle('selected')
   },
+
+  lightMode() {
+    selector.buttonLightMode.classList.remove('hide')
+    selector.buttonDarkMode.classList.add('hide')
+
+    selector.body.classList.remove('dark')
+  },
+
+  darkMode() {
+    selector.buttonLightMode.classList.add('hide')
+    selector.buttonDarkMode.classList.remove('hide')
+
+    selector.body.classList.add('dark')
+  },
 }

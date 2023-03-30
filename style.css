@@ -5,11 +5,23 @@
 }
 
 :root {
-  --color: 240;
-  --bg-color: white;
+  --bg-color: #FFFFFF;
   --txt-color: hsla(var(--color), 6%, 21%, 1);
+  --card-color: #E1E1E6;
+  --card-hover: #02799D;
+  --card-fill: #323238;
+  --card-fill-hover: #FFFFFF;
 
   font-size: 62.5%;
+}
+
+.dark {
+  --bg-color: #000000;
+  --txt-color: #FFFFFF;
+  --card-color: #29292E;
+  --card-hover: #0A3442;
+  --card-fill: #C4C4CC;
+  --card-fill-hover: #FFFFFF;
 }
 
 .hide {
@@ -25,6 +37,8 @@ body {
 
   width: 100vw;
   height: 100vh;
+
+  background-color: var(--bg-color);
 }
 
 main {
@@ -62,12 +76,12 @@ span {
   color: var(--txt-color);
 }
 
-#teste {
+#soundWrapper {
   display: flex;
   align-items: center;
 }
 
-.soundWrapper {
+.cardWrapper {
   display: grid;
   grid-template-areas: 
   "A B"
@@ -77,24 +91,24 @@ span {
 
 .card {
   padding: 4.8rem;
-  background: #E1E1E6;
+  background: var(--card-color);
   border-radius: 2.4rem;
   transition: background 0.5s ease;
 }
 
 .card svg path, .btn svg path {
-  fill: #323238;
+  fill: var(--card-fill);
   transition: fill 0.25s ease;
 }
 
 .card:hover, .card:hover svg path {
-  background: #02799D;
-  fill: white;
+  background: var(--card-hover);
+  fill: var(--card-fill-hover);
   cursor: pointer;
 }
 
 .btn:hover svg path {
-  fill: #02799D;
+  fill: var(--card-hover);
 }
 
 
@@ -112,11 +126,33 @@ span {
 }
 
 .selected svg path {
-  fill: white;
+  fill: var(--card-fill-hover);
 }
 
 .selected {
-  background: #02799D;
+  background: var(--card-hover);
+}
+
+/* Light and Dark mode*/
+
+header {
+  margin-top: 6rem;
+  width: 100vw;
+  height: 4.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mode {
+  cursor: pointer;
+
+  transition: transform .5s;
+}
+
+.mode:hover {
+  transform: scale(1.1);
 }
 
 @media (min-width: 920px) {
@@ -133,6 +169,16 @@ span {
   .buttonWrapper {
     margin-top: 4.8rem;
   }
+
+  .mode {
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+  }
+
+  header {
+    position: fixed;
+  }
 }
 
 @media (max-width: 345px) {
@@ -146,5 +192,15 @@ span {
 
   .card {
     padding: 3.2rem;
+  }
+
+  header {
+    margin-top: 3rem;
+    width: 100vw;
+    height: 4.4rem;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

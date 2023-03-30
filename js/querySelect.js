@@ -12,4 +12,8 @@ export const selector = {
 
   minutesDisplay: document.querySelector('.minutes'),
   secondsDisplay: document.querySelector('.seconds'),
+
+  buttonLightMode: document.querySelector('#light-mode'),
+  buttonDarkMode: document.querySelector('#dark-mode'),
+  body: document.querySelector('body')
 }
